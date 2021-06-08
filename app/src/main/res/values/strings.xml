@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Assignment1_GurpreetKaur_DieceRoll</string>
+    <string name="Computer">Computer</string>
+    <string name="User">User</string>
+    <string name="lower">LOWER</string>
+    <string name="Higher">HIGHER</string>
+</resources>
