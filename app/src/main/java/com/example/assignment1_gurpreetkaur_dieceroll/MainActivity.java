@@ -1,18 +1,19 @@
 package com.example.assignment1_gurpreetkaur_dieceroll;
+/**
+ * @author Gurpreet Kaur
+ * Assignment 1
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.Random;
 
-
 public class MainActivity extends AppCompatActivity {
-
+    //initialize variable
     private ImageView computerDice, userDice;
     private Button buttonLower, buttonHigher;
     private ImageView resultView;
@@ -28,10 +29,11 @@ public class MainActivity extends AppCompatActivity {
         buttonHigher = findViewById(R.id.button_higher);
         resultView=findViewById(R.id.result_View);
 
-//      When user click on lower button result will be appeared on the screen
+        //When user click on lower button result will be appeared on the screen using imageview
         buttonLower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+        //function call
                 generateRandom();
                 if(computerRandom < userRandom){
                     resultView.setImageResource(R.drawable.computerwin);
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//  When user click higher button result will be displayed
+        //When user click higher button result will be displayed using imageview
         buttonHigher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,12 +63,10 @@ public class MainActivity extends AppCompatActivity {
                     resultView.setImageResource(R.drawable.userwin);
                     resultView.setVisibility(View.VISIBLE);
                 }
-
                 else {
                     resultView.setImageResource(R.drawable.tie);
                     resultView.setVisibility(View.VISIBLE);
                 }
-
             }
         });
     }
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         rollDice(computerRandom, userRandom);
     }
 
-//    function to roll dice images
+//function to roll dice images
     private void rollDice(int compRandom, int playerRandom) {
         char dice1 = (char) (compRandom + '0');
         char dice2 = (char) (playerRandom + '0');
